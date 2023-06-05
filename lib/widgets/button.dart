@@ -17,7 +17,7 @@ class Button extends StatelessWidget {
       child: Container(
         height: 60,
         decoration: BoxDecoration(
-          color: Colors.purple,
+          color: const Color(0xff4C5DF4),
           borderRadius: BorderRadius.circular(8),
         ),
         child: Center(

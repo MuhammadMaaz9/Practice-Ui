@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:uicheck/screens/signup.dart';
 import 'package:uicheck/widgets/button.dart';
 import 'package:uicheck/widgets/phone_number_field.dart';
@@ -24,7 +25,9 @@ class SignIn extends StatelessWidget {
                 const Text(
                   'Sign In',
                   style: TextStyle(
+                    fontWeight: FontWeight.bold,
                     fontSize: 18,
+                    color: Color(0xff0C1037),
                   ),
                 )
               ],
@@ -37,11 +40,54 @@ class SignIn extends StatelessWidget {
                     height: 15,
                   ),
                   const Text(
-                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eu tellus porttitor, facilisis purus vel'),
+                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eu tellus porttitor, facilisis purus vel',
+                    style: TextStyle(
+                      color: Color(0xff6E7682),
+                      fontSize: 15,
+                    ),
+                  ),
                   const SizedBox(
                     height: 40,
                   ),
-                  const PhoneNumberField(),
+                  SizedBox(
+                    width: double.infinity,
+                    child: IntlPhoneField(
+                      enabled: false,
+                      onTap: () {},
+                      flagsButtonPadding: const EdgeInsets.only(left: 10),
+                      disableLengthCheck: true,
+                      showDropdownIcon: true,
+                      dropdownIconPosition: IconPosition.trailing,
+                      decoration: const InputDecoration(
+                        labelStyle: TextStyle(color: Colors.black),
+                        filled: true,
+                        fillColor: Colors.white,
+                        hintText: '2365 2568 5645',
+                        labelText: 'Mobile Number',
+                        floatingLabelAlignment: FloatingLabelAlignment.start,
+                        floatingLabelBehavior: FloatingLabelBehavior.always,
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                          borderSide: BorderSide(
+                              color: Color(0xffE4E5E7),
+                              style: BorderStyle.solid),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                          borderSide: BorderSide(
+                              color: Color(0xffE4E5E7),
+                              style: BorderStyle.solid),
+                        ),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(13.0)),
+                          borderSide: BorderSide(
+                              color: Color(0xffE4E5E7),
+                              style: BorderStyle.solid),
+                        ),
+                      ),
+                      initialCountryCode: 'US',
+                    ),
+                  ),
                   const SizedBox(
                     height: 25,
                   ),
@@ -83,7 +129,7 @@ class SignIn extends StatelessWidget {
                               ),
                             );
                           },
-                          child: Text('SIGN UP'))
+                          child: const Text('SIGN UP'))
                     ],
                   )
                 ],

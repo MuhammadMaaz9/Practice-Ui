@@ -17,11 +17,26 @@ class TextfieldWidget extends StatelessWidget {
     return TextField(
       obscureText: obscureText,
       decoration: InputDecoration(
+        focusedBorder: const OutlineInputBorder(
+            borderSide: BorderSide(
+          width: 1,
+          color: Color(0xffE4E5E7),
+        )),
+        enabledBorder: const OutlineInputBorder(
+            borderSide: BorderSide(
+          width: 1,
+          color: Color(0xffE4E5E7),
+        )),
         suffixIcon: Icon(icon),
-        border: const OutlineInputBorder(),
+        border: const OutlineInputBorder(
+          borderSide: BorderSide(
+            color: Color(0xffE4E5E7),
+          ),
+        ),
         labelText: label,
         hintText: hinttext,
-        labelStyle: TextStyle(
+        hintStyle: const TextStyle(color: Color(0xff6E7682)),
+        labelStyle: const TextStyle(
           color: Colors.black,
         ),
         floatingLabelAlignment: FloatingLabelAlignment.start,
